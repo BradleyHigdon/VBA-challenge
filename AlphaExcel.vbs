@@ -1,6 +1,5 @@
 Sub alpha()
-
-        'Setting up worksheet as a variable to go through all sheets in excel file at once
+'Setting up worksheet as a variable to go through all sheets in excel file at once
         Dim WorksheetName As String
         For Each ws In Worksheets
         WorksheetName = ws.Name
@@ -24,8 +23,9 @@ Sub alpha()
                 TickerName = Cells(i, 1).Value
                 Cells(2, 9).Value = TickerName
                 
-            'Closing Price
+            'Closing and Open Price
                 ClosingPrice = Cells(i, 6).Value
+                OpenPrice = Cells(i, 3).Value
                 
             'Yearly Change
                 YearlyChange = ClosingPrice - OpenPrice
@@ -59,5 +59,6 @@ Sub alpha()
     
        'All work in first worksheet done, moving on to next worksheet
        Next ws
+
 
 End Sub
